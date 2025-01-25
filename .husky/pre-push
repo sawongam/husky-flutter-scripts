@@ -4,4 +4,10 @@
 dart format .
 dart fix --apply
 
+git add -u
+
+if ! git diff-index --quiet HEAD --; then
+  git commit -m "chore: remove unused imports and add const where applicable [husky]"
+fi
+
 exit 0
